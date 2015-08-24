@@ -1,0 +1,174 @@
+@echo off
+::CPU API
+cls
+set cputurn=
+set cputurnoff=
+set cputurnon=
+echo.
+echo %enemy% is thinking, please wait.
+echo.
+:: API I
+::     v
+:: CPU Turn Menu Randomizer
+:Rand
+set /a cputurn=%random% %%2 +1
+if '%cputurn%'=='1' goto CPUAttack
+if '%cputurn%'=='2' goto CPUDefence
+if '%cputurn%'=='0' goto Rand
+if '%cputurn%'=='' goto Rand
+if '%cputurn%'=='3' goto Rand
+::Cpu Attack Randomizer
+::Nuke Här
+:CPUAttack
+:Randoff
+set /a cputurn=%random% %%4 +1
+if '%cputurn%'=='1' goto CPUNuke
+if '%cputurn%'=='2' goto CPUAirstrike
+if '%cputurn%'=='3' goto CPUMissile
+if '%cputurn%'=='4' goto CPUTroops
+if '%cputurn%'=='' goto Randoff
+if '%cputurn%'=='0' goto Randoff
+if '%cputurn%'=='5' goto Randoff
+:CPUNuke
+-if '%CPUNuke%'=='0' goto CPUnonuke
+if '%CPUNuke%'=='1' goto CPUnuker
+if '%CPUNuke%'=='' goto CPUnuke
+:CPUnuker
+set /a CPUNuker=%random% %%9 +1
+if '%CPUNuker%'=='1' goto CPUmiss
+if '%CPUNuker%'=='2' goto CPUmiss
+if '%CPUNuker%'=='3' goto CPUHit
+if '%CPUNuker%'=='4' goto CPUmiss
+if '%CPUNuker%'=='5' goto CPUmiss
+if '%CPUNuker%'=='6' goto CPUHit
+if '%CPUNuker%'=='7' goto CPUmiss
+if '%CPUNuker%'=='8' goto CPUmiss
+if '%CPUNuker%'=='9' goto CPUHit
+if '%CPUNuker%'=='0' goto CPUmiss
+if '%CPUNuker%'=='' goto CPUnuker
+:CPUnonuke
+cls
+goto Randoff
+:CPUHit
+cls
+echo.
+echo %enemy% Has sent a nuke.
+echo.
+ping localhost -n 4 >nul
+echo.
+echo You have been hit.
+echo.
+ping loclahost -n 4 >nul
+echo.
+echo You have lost 500 def!
+echo.
+set /a user=%user% - 500
+goto gameplay
+:CPUmiss
+cls
+echo.
+echo Enemy nuke missed.
+echo.
+set /a CPUnuke=%CPUNuke% - 1
+goto gameplay
+:: CPUAirstrike I
+::              V
+:CPUAirstrike
+cls
+set /a CPUAirstrike=%CPUAirstrike% - 1
+if '%CPUAirstrike%'=='0' goto noCPUAirstrike
+if '%CPUAirstrike%'=='1' goto CPUAirstriker
+if '%CPUAirstrike%'=='2' goto CPUAirstriker
+if '%CPUAirstrike%'=='' goto noCPUAirstrike
+:CPUAirstriker
+cls
+set /a CPUAirstriker=%random% %%8 +1
+if '%CPUAirstriker%'=='1' goto CPUmiss1
+if '%CPUAirstriker%'=='2' goto CPUmiss1
+if '%CPUAirstriker%'=='3' goto CPUHit1
+if '%CPUAirstriker%'=='4' goto CPUHit1
+if '%CPUAirstriker%'=='5' goto CPUmiss1
+if '%CPUAirstriker%'=='6' goto CPUmiss1
+if '%CPUAirstriker%'=='7' goto CPUmiss1
+if '%CPUAirstriker%'=='8' goto CPUHit1
+if '%CPUAirstriker%'=='9' goto CPUHit1
+if '%CPUAirstriker%'=='0' goto CPUHit1
+if '%CPUAirstriker%'=='' goto CPUAirstriker
+:CPUHit1
+cls
+echo.
+echo %Enemy% sent airstrike against you!
+ping localhost -n 4 >nul
+cls
+echo You got %name%
+echo.
+echo And Lost 200 Def
+set /a user=%user% - 200 
+pause >nul
+goto cpuTur
+:miss1
+cls
+echo Your Airstrikes missed %user%
+echo.
+pause >nul
+goto CpuTurn
+:missile
+cls
+set /a CPUmissile=%CPUmissile% - 1
+if '%CPUmissile%'=='0' goto noCPUmissile
+if '%CPUmissile%'=='1' goto CPUmissiler
+if '%CPUmissile%'=='2' goto CPUmissiler
+if '%CPUmissile%'=='3' goto CPUmissiler
+:CPUmissiler
+cls
+set /a CPUmissiler=%random% %%8 +1
+if '%CPUmissiler%'=='1' goto träff2
+if '%CPUmissiler%'=='2' goto miss2
+if '%CPUmissiler%'=='3' goto träff2
+if '%CPUmissiler%'=='4' goto miss2
+if '%CPUmissiler%'=='5' goto träff2
+if '%CPUmissiler%'=='6' goto miss2
+if '%CPUmissiler%'=='7' goto träff2
+if '%CPUmissiler%'=='8' goto miss2
+if '%CPUmissiler%'=='0' goto träff2
+if '%CPUmissiler%'=='' goto CPUmissiler
+:miss2
+echo.
+echo Your missiles you lunched missed enemy base
+echo.
+ping localhost -n 4 >nul
+goto CpuTurn
+:träff2
+echo.
+echo %enemy% have hit
+echo.
+ping localhost -n 3 >nul
+echo.
+echo You Hit %name%
+echo.
+echo %enemy% lost 150 DEF
+set /a cpu=%cpu% -150
+pause >nul
+goto cpuTurn
+:CPUTroops
+cls
+set /a CPUmissile=%CPUmissile% - 1
+if '%CPUTroops%'=='0' goto noCPUTroops
+if '%CPUTroops%'=='1' goto CPUTroops
+if '%CPUTroops%'=='2' goto CPUTroops
+if '%CPUTroops%'=='3' goto CPUTroops
+:CPUTroopss
+cls
+set /a CPUTroopss=%random% %%8 +1
+if '%CPUTroopss%'=='1' goto träff3
+if '%CPUTroopss%'=='2' goto miss3
+if '%CPUTroopss%'=='3' goto träff3
+if '%CPUTroopss%'=='4' goto miss3
+if '%CPUTroopss%'=='5' goto träff3
+if '%CPUTroopss%'=='6' goto miss3
+if '%CPUTroopss%'=='7' goto träff3
+if '%CPUTroopss%'=='8' goto miss3
+if '%CPUTroopss%'=='0' goto träff3
+if '%CPUTroopss%'=='' goto CPUTroopss
+
+
