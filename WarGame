@@ -1,0 +1,671 @@
+@echo off
+color 0f
+title WarGame lost version by Lunix46
+set Option=
+set move=
+:start
+cls
+echo ______________________________________________
+echo.
+echo     Welcome to WarGame, Created by Lunix46    
+echo                     %random%
+echo ______________________________________________
+echo.
+echo    Type Start and press enter to start.
+echo.
+echo    type Info and press enter for info about the game
+echo.
+set /p Option=what is your option:
+if '%Option%'=='start' goto players
+if '%Option%'=='info' goto info
+cls
+:start
+:info
+cls
+echo.
+echo Welcome to WarGame New Version! Its made by Lunix46
+echo The game is programmed to play against the in built bot API
+echo.
+echo The game can be played with 2 players at the same time.
+echo.
+echo The game is all programmed by Lunix46
+echo check my channel out on
+echo.
+echo http://www.youtube.com/user/Lunix46
+echo.
+echo Thanks for playing hope you liked it. If you wanna
+echo tell me something to make the game better or such,
+echo just head to my channel and drop a comment.
+pause >Nul
+goto start
+:players
+cls
+set player=
+set replay=
+echo.
+set /p player=Select 1 or 2 player mode:
+if '%player%'=='1' goto name
+if '%player%'=='2' goto p1name
+goto players
+:name
+cls
+set name=
+echo.
+set /p name=Please type in your name (One word):
+if '%name%'=='' goto name
+rem Easter Egg:
+if '%name%'=='Lunix46' goto win
+if '%name%'=='lunix46' goto win
+if '%name%'=='John' goto win
+if '%name%'=='john' goto win
+if '%name%'=='Jim' goto win
+if '%name%'=='jim' goto win
+:country
+cls
+set country=
+set enemy=
+echo.
+echo Welcome %name%!
+echo.
+echo Chose a country! by the list under.
+echo.
+echo USA, Russia, Canada, Sweden, Isengard, Mordor, Gondor, Spain
+echo midgar
+echo.
+set /p country=Choose your country:
+if '%country%'=='usa' goto enemy1
+if '%country%'=='USA' goto enemy1
+if '%country%'=='Usa' goto enemy1
+if '%country%'=='Russia' goto enemy2
+if '%country%'=='russia' goto enemy2
+if '%country%'=='canada' goto enemy3
+if '%country%'=='Canada' goto enemy3
+if '%country%'=='sweden' goto enemy4
+if '%country%'=='Sweden' goto enemy4
+if '%country%'=='isengard' goto enemy5
+if '%country%'=='Isengard' goto enemy5
+if '%country%'=='mordor' goto enemy6
+if '%country%'=='Mordor' goto enemy6
+if '%country%'=='gondor' goto enemy7
+if '%country%'=='gondor' goto enemy7
+if '%country%'=='Spain' goto enemy
+if '%country%'=='Spain' goto enemy
+if '%country%'=='midgar' goto enemy
+if '%country%'=='Midgar' goto enemy
+if '%country%'=='' goto country
+goto country
+:enemy1
+set country=USA
+goto enemy
+:enemy2
+set country=Russia
+goto enemy
+:enemy3
+set country=Canada
+goto enemy
+:enemy4
+set country=Sweden
+goto enemy
+:enemy5
+set country=Isengard
+goto enemy
+:enemy6
+set country=Mordor
+goto enemy
+:enemy7
+set country=Gondor
+goto enemy
+:enemy8
+set country=Spain
+goto enemy
+:enemy9
+set country=Midgar
+goto enemy
+:enemy
+set /a cpucountryrand=%random% %%7 +1
+if '%cpucountryrand%'=='0' goto enemy
+if '%cpucountryrand%'=='1' set enemy=Russia
+if '%cpucountryrand%'=='2' set enemy=USA
+if '%cpucountryrand%'=='3' set enemy=Canada
+if '%cpucountryrand%'=='4' set enemy=Sweden
+if '%cpucountryrand%'=='5' set enemy=Isengard
+if '%cpucountryrand%'=='6' set enemy=Spain
+if '%cpucountryrand%'=='7' set enemy=midgard
+if '%enemy%'=='%country%' goto enemy
+goto begin
+:Alex
+cls
+echo.
+echo Jim ha(med 2 prickar)lsa "J*VLANS ARSLE"
+echo.
+ping localhost -n 3 >nul
+goto begin
+:Eemil
+cls
+echo.
+echo FINNEEEEEEEEEEEEEE J*VEL!!!!!!!!!!
+ping localhost -n 3 >nul
+start C:/Users/ad62130/Desktop/Pic123.html
+pause >Nul
+:begin
+set user=1000
+set cpu=1000
+set nuke=1
+set airstrike=2
+set missile=3
+set troops=4
+set bunker=4
+set nuclerpro=1
+set sandmonkey=2
+set FGod=1
+:gameplay
+cls
+set move=
+set choice=
+set cpucount=0
+echo.
+echo %name%, your turn.
+echo                                                               %country%: %user% DEF
+echo [1] Offensive Options
+echo.
+echo [2] Deffensive Options
+echo                                                               %enemy%: %cpu% DEF
+echo [3] Pass your turn
+echo.
+echo [4] Surrender
+echo.
+set /p move=what is your move:
+if '%move%'=='1' goto off
+if '%move%'=='2' goto def
+if '%move%'=='3' cpuTurn
+if '%move%'=='4' Surrender
+:off
+cls
+echo.
+echo ____________________________________________
+echo.
+echo You Chose Offensive What do you want to do?
+echo.
+echo ____________________________________________
+echo.
+echo [1] Send Nuke? %nuke%
+echo.
+echo [2] Send AirStrike? %airstrike%
+echo.
+echo [3] send Missiles? %missile%
+echo.
+echo [4] send troops? %troops%
+echo.
+echo [5] Go back to previous menu?
+echo.
+set /p move=Move:
+if '%move%'=='1' goto nuke
+if '%move%'=='2' goto airstrike
+if '%move%'=='3' goto missile
+if '%move%'=='4' goto troops
+if '%move%'=='5' goto gameplay
+if '%move%'=='' goto off
+if '%move%'=='0' goto gameplay 
+cls
+:nuke
+cls
+if '%nuke%'=='0' goto nonuke
+if '%nuke%'=='1' goto nuker
+if '%nuke%'=='' goto nuke
+:nuker
+set /a nuker=%random% %%9 +1
+if '%nuker%'=='1' goto miss
+if '%nuker%'=='2' goto miss
+if '%nuker%'=='3' goto träff
+if '%nuker%'=='4' goto miss
+if '%nuker%'=='5' goto miss
+if '%nuker%'=='6' goto träff
+if '%nuker%'=='7' goto miss
+if '%nuker%'=='8' goto miss
+if '%nuker%'=='9' goto träff
+if '%nuker%'=='0' goto miss
+if '%nuker%'=='' goto nuker
+:träff
+set /a nuke=%nuke% - 1
+cls
+echo.
+echo Nuke has been launched.
+echo.
+ping localhost -n 4 >nul
+echo.
+echo %enemy% has been hit by your nuke.
+ping localhost -n 4 >nul
+echo.
+echo %enemy% lost 500 DEF!
+set /a cpu=%cpu% - 500
+echo.
+pause >nul
+cls
+goto cpuTurn
+:miss
+set /a nuke=%nuke% - 1
+cls
+echo.
+echo your nuke missed the enemy`s land!
+echo.
+ping localhost -n 4 >nul
+cls
+goto cputurn
+:nonuke
+cls
+echo.
+echo you dont have any nukes to send!
+echo.
+ping localhost -n 4 >Nul
+goto off
+cls
+:airstrike
+cls
+set /a airstrike=%airstrike% - 1
+if '%airstrike%'=='0' goto noairstrike
+if '%airstrike%'=='1' goto airstriker
+if '%airstrike%'=='2' goto airstriker
+if '%airstrike%'=='' goto noairstrike
+:airstriker
+cls
+set /a airstriker=%random% %%8 +1
+if '%airstriker%'=='1' goto miss1
+if '%airstriker%'=='2' goto miss1
+if '%airstriker%'=='3' goto träff1
+if '%airstriker%'=='4' goto träff1
+if '%airstriker%'=='5' goto miss1
+if '%airstriker%'=='6' goto miss1
+if '%airstriker%'=='7' goto miss1
+if '%airstriker%'=='8' goto träff1
+if '%airstriker%'=='9' goto träff1
+if '%airstriker%'=='0' goto träff1
+if '%airstriker%'=='' goto airstriker
+:träff1
+cls
+echo.
+echo You have launched your airstrikes against %enemy% land
+ping localhost -n 4 >nul
+cls
+echo %enemy% has been hit by your airstrike
+echo.
+echo And Lost 200 Def
+set /a cpu=%cpu% - 200 
+pause >nul
+goto cpuTurn
+:miss1
+cls
+echo Your Airstrikes missed %enemy%
+echo.
+pause >nul
+goto CpuTurn
+:missile
+cls
+set /a missile=%tmissile% - 1
+if '%missile%'=='0' goto nomissile
+if '%missile%'=='1' goto missiler
+if '%missile%'=='2' goto missiler
+if '%missile%'=='3' goto missiler
+:missiler
+cls
+set /a missiler=%random% %%8 +1
+if '%missiler%'=='1' goto träff2
+if '%missiler%'=='2' goto miss2
+if '%missiler%'=='3' goto träff2
+if '%missiler%'=='4' goto miss2
+if '%missiler%'=='5' goto träff2
+if '%missiler%'=='6' goto miss2
+if '%missiler%'=='7' goto träff2
+if '%missiler%'=='8' goto miss2
+if '%missiler%'=='0' goto träff2
+if '%missiler%'=='' goto missiler
+:miss2
+echo.
+echo Your missiles you lunched missed enemy base
+echo.
+ping localhost -n 4 >nul
+goto CpuTurn
+:träff2
+echo.
+echo Your Missiles has been launched aginast the enemy base.
+echo.
+ping localhost -n 3 >nul
+echo.
+echo You Hit %enemy%
+echo.
+echo %enemy% lost 150 DEF
+set /a cpu=%cpu% -150
+pause >nul
+goto cpuTurn
+:troops
+cls
+if '%troops%'=='1' goto troopsr
+if '%troops%'=='2' goto troopsr
+if '%troops%'=='3' goto troopsr
+if '%troops%'=='4' goto troopsr
+if '%troops%'=='0' goto notroops
+if '%troops%'=='' goto troops
+:troopsr
+set /a troopsr=%random% %%8 +1
+if '%troopsr%'=='1' goto miss3
+if '%troopsr%'=='2' goto träff3
+if '%troopsr%'=='3' goto miss3
+if '%troopsr%'=='4' goto träff3
+if '%troopsr%'=='5' goto träff3
+if '%troopsr%'=='6' goto miss3
+if '%troopsr%'=='7' goto träff3
+if '%troopsr%'=='8' goto träff3
+if '%troopsr%'=='0' goto miss3
+if '%troopsr%'=='' goto troopsr
+:träff3
+cls
+set /a troops=%troops% - 1
+echo.
+echo Troops has been deplayed and enter enemy base.
+echo.
+ping localhost -n 4 >nul
+echo.
+echo Troops enter enemies HQ and stealed importent Info.
+echo.
+Pause >nul
+echo %enemy% lost 100 DEF
+set /a cpu=%cpu% -100
+goto cputurn
+:miss3
+cls
+set /a troops=%troops% - 1
+echo.
+echo Your troops parachute dident deploy so they died.
+echo.
+ping localhost -n 4 >nul
+goto cputurn
+:notroops
+cls
+echo.
+echo You dont haVe troops to deploy.
+echo.
+goto off
+:: End of attack option's. Defensive Skills are below.
+:def
+cls
+echo.
+echo ____________________________________________
+echo.
+echo You Chose Defensive What do you want to do?
+echo.
+echo ____________________________________________
+echo.
+echo [1] Build a bunker to store all data? %bunker% Left. +250 Def!
+echo.
+echo [2] Deploy Nukeler Protection? %nuclerpro% Left. +1000 Def!
+echo.
+echo [3] Deply Sandmonkey! %sandmonkey% Left. +500 Def!
+echo.
+echo [4] Faith/GOD! %FGod% Left. +10 Def!
+echo.
+echo [5] Go back to previous menu?
+echo.
+set /p move=Move:
+if '%move%'=='1' goto bunker
+if '%move%'=='2' goto Nukelerpro
+if '%move%'=='3' goto sandmonkey
+if '%move%'=='4' goto FGod
+if '%move%'=='5' goto gameplay
+if '%move%'=='' goto deff
+:bunker
+cls
+set /a bunker=%bunker% - 1
+if '%bunker%'=='4' goto bunkers
+if '%bunker%'=='3' goto bunkers
+if '%bunker%'=='2' goto bunkers
+if '%bunker%'=='1' goto bunkers
+if '%bunker%'=='0' goto nobunkers
+:bunkers
+cls
+echo.
+echo Your workers are builing bunkers to protect data..
+echo.
+ping localhost -n 4 >nul
+cls
+echo Progressbar... [          ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [I         ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [II        ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [III       ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIII      ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIII     ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIII    ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIII   ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIIII  ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIIIII ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIIIIII]
+ping localhost -n 2 >nul
+cls
+echo.
+echo Bunkers have been built sir.
+set /a user=%user% +250
+echo.
+echo Press any button.
+pause >nul
+goto cputurn
+:nobunkers
+set /a bunker=%bunker% -1
+echo.
+echo Your workers doesnt have material to build more bunkers.
+echo.
+ping localhost -n 4
+goto cputurn
+:Nukelerpro
+cls
+if '%nuclerpro%'=='1' goto Nukelerpro1
+if '%nuclerpro%'=='0' goto noNukelerpro
+:nuclerpro1
+cls
+echo.
+echo Your workers have started to build nuke protection!
+echo.
+ping localhost -n 4 >nul
+cls
+echo Progressbar... [          ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [I         ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [II        ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [III       ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIII      ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIII     ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIII    ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIII   ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIIII  ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIIIII ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIIIIII]
+ping localhost -n 2 >nul
+cls
+echo.
+echo Your workers has now built a protection for nukes!
+echo.
+set /a user=%user% +1000
+echo You now have 1000+ Def points.
+echo.
+echo Press a button..
+pause >nul
+goto cputurn
+:nonuclerpro
+cls
+echo.
+echo You have already built a nuke protection!
+echo.
+goto def
+:sandmonkey
+cls
+if '%sandmonkey%'=='0' goto Nosandmonkey
+if '%sandmonkey%'=='1' goto sandmonkey1
+if '%sandmonkey%'=='2' goto sandmonkey1
+:Nosandmonkey
+cls
+echo.
+echo You do not have any sandmonkey to deploy!
+echo.
+pause >nul
+goto def
+:sandmonkey1
+start C:/Users/ad62130/Desktop/Pic123.html
+cls
+echo.
+ping localhost -n 4 >nul
+cls
+echo Progressbar... [          ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [I         ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [II        ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [III       ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIII      ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIII     ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIII    ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIII   ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIIII  ]
+ping localhost -n 2 >nul
+cls
+echo Progressbar... [IIIIIIIII ]
+ping localhost  -n 2 >nul
+cls
+echo Progressbar... [IIIIIIIIII]
+ping localhost -n 2 >nul
+cls
+echo.
+set /a user=%user% +500 
+echo You're workers have built sandmonkey and earnt +500
+echo.
+echo Press a button
+echo.
+pause >nul
+goto cputurn
+:FGod
+cls
+echo.
+echo You beg to god for help.
+echo.
+echo press any button to start prayer
+pause >nul
+cls
+echo Pray Level = 69
+echo.
+echo Pray = 1 Complete
+ping localhost -n 1 >nul
+echo Pray = 2 Complete
+echo Pray = 3 Complete
+echo Pray = 4 Complete
+echo Pray = 5 Complete
+echo Pray = 6 Complete
+ping localhost -n 2 >nul
+echo Pray = 7 Complete
+echo Pray = 8 Complete
+echo Pray = 9 Complete
+echo Pray = 10 Complete
+echo Pray = 20 Complete
+echo Pray = 21 Complete
+echo Pray = 22 Complete
+echo Pray = 35 Complete
+ping localhost -n 2 >nul
+echo Pray = 64 Complete
+echo Pray = 75 Complete
+echo Pray = 88 Complete
+echo Pray = 89 Complete
+echo Pray = 90 Complete
+ping localhost -n 3 >nul
+echo Pray = 100 Complete
+ping localhost -n 2 >nul
+cls
+echo.
+echo Pray = Complete
+echo.
+echo God have given you 10 Def
+set a/ user=%user% +10
+ping localhost -n 3 >nul
+goto cputurn
+:: Put code for CPUAPI Here.
+:cpuTurn
+
+::Win need to be put down here.
+:win1
+:win
+cls
+echo.
+echo          You finished the game!
+echo.
+echo          Thanks for playing!
+echo.
+echo          Wanna play again or quit?
+echo.
+echo  [1] To quit type Exit and press Enter
+echo.
+echo  [2] To restart type Reboot and press Enter
+echo.
+set /p move=What do you want to do:
+if '%move%'=='exit'  goto exit
+if '%move%'=='Exit' goto exit
+if '%move%'=='Reboot' goto start
+if '%move%'=='reboot' goto start
+if '%move%'=='' goto win
+pause >nul
+
+:: Made by Lunix46
+:: it have taken me around a year to make the ground script
+:: and now i fixed it as a game.
+:: Things i would add is these.
+::
+:: 1. Different special options for each country/team
+:: 2. Resources (Like if you play for 2 min you get maybe 10 coins and coins = Special attacks.)
+:: 3. Different attacks for each country like midgar gets orcs etc.
+:: 4. Cool looking animations when launching nuke for instance. 
